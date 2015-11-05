@@ -2,10 +2,7 @@ package main
 import "fmt"
 func main(){
 
-     var i int64 = 1
-     var j int64 = 2
-     var sum int64 = 0
-     var k int64
+     var i,j,sum, k int64 = 1, 2, 0, 0
 
      for k = 0; k < 4000000; k++ {
 	 
