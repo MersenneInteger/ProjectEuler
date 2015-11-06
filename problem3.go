@@ -6,7 +6,8 @@ package main
 import "fmt"
 func main(){
 
-var num, i , j int64 = 600851475143, 0, 0
+var num, i , j, max int64 = 600851475143, 0, 0,0
+
 
 for j = 2; j<= num/3; j++ {
     i = 2;
@@ -15,9 +16,10 @@ for j = 2; j<= num/3; j++ {
     }
     if i == j && i!=2 {
        	   if num % j == 0 {
-       	      fmt.Println(j)
+	      max = j
       }
     }
   }
+fmt.Println(max)
 }
 
