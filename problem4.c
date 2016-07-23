@@ -13,13 +13,13 @@ int main(){
         for(int j = 999; j != i; j--){
            
             product = i * j;
+            copy = product;//make copy of product
+            count = getCount(copy);//get number of elements
             copy = product;
-            count = getCount(copy);
-            copy = product;
-            int list[count];
+            int list[count];//create array to store digits
             int counter = 0;    
             
-            while(product != 0){
+            while(product != 0){ //breaks up digits
 
                 digit = product % 10;
                 list[counter] = digit;
@@ -33,7 +33,7 @@ int main(){
                     temp = copy;
                 else
                     {
-                        if(copy > temp) {
+                        if(copy > temp) { //find largest palindrome product
                                 max = copy;
                                 temp = copy;
                         }
@@ -50,7 +50,7 @@ int main(){
 bool isPalindrome(int array[], int size){
     bool flag = false;
 
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i < size; i++){//compare corresponding indexes 
         if(array[i] != array[(size -i) - 1]){
             flag = false;
             break;
