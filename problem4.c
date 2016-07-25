@@ -6,14 +6,13 @@ int getCount(int num);
 
 int main(){
     
-    int digit, count, product, copy, temp = 0, k = 0, max; 
+    int digit, count, product, copy, temp = 0, max; 
     bool isPal = false;
 
     for(int i = 100; i < 1000; i++){
         for(int j = 999; j != i; j--){
            
-            product = i * j;
-            copy = product;//make copy of product
+            copy = product = i * j; 
             count = getCount(copy);//get number of elements
             copy = product;
             int list[count], counter = 0;//create array to store digits    
@@ -28,12 +27,9 @@ int main(){
 
             isPal = isPalindrome(list, count); 
             if(isPal && copy > temp) {
-                if(k == 0)
-                    temp = copy;
                 max = copy;
                 temp = copy;   
             }
-             k++;  
         }
     }//end of ounter for loop
     printf("%d ", max);
@@ -42,24 +38,23 @@ int main(){
 }//end of main
 
 bool isPalindrome(int array[], int size){
+    
     bool flag = false;
 
     for(int i = 0; i < size; i++){//compare corresponding indexes 
-        if(array[i] != array[(size -i) - 1]){
-            flag = false;
-            break;
-        }
+        if(array[i] != array[(size -i) - 1])
+            return false;
         else {   
             flag = true;
             if(i == (size / 2)) break;
         }
     }//end of for loop
 
-    if(flag) return true;
-    else return false;
+     return true;
 
 }//end of isPalindrome
 int getCount(int num){
+    
     int c = 0;
 
     while(num != 0){
