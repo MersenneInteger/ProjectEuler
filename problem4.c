@@ -16,8 +16,7 @@ int main(){
             copy = product;//make copy of product
             count = getCount(copy);//get number of elements
             copy = product;
-            int list[count];//create array to store digits
-            int counter = 0;    
+            int list[count], counter = 0;//create array to store digits    
             
             while(product != 0){ //breaks up digits
 
@@ -27,19 +26,14 @@ int main(){
                 counter++;
             }
 
-            isPal = isPalindrome(list, count);  
-            if(isPal) {
+            isPal = isPalindrome(list, count); 
+            if(isPal && copy > temp) {
                 if(k == 0)
                     temp = copy;
-                else
-                    {
-                        if(copy > temp) { //find largest palindrome product
-                                max = copy;
-                                temp = copy;
-                        }
-                    }
-                k++;
-            }  
+                max = copy;
+                temp = copy;   
+            }
+             k++;  
         }
     }//end of ounter for loop
     printf("%d ", max);
