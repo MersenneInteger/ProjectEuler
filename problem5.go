@@ -2,20 +2,20 @@ package main
 import "fmt"
 func main(){
      
-	 var num, i, target int64 = 2520, 1, 0
+     var num, i, target int64 = 2520, 1, 0
      var isfound bool = false
 
      for !isfound {
      	for i = 1; i < 21; i++{ 
 	        if num % i == 0 && num % 20 == 0 {
 	            if i == 20 {        
-                    isfound = true
+                    	isfound = true
 	                target = num
-                    break
-                }
+                    	break
+                    }
 	        } else { 
-                i = 1
-		        num += 20	
+                     i = 1
+		     num += 20	
             }
         }    
      }
