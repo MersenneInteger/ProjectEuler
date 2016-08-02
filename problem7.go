@@ -6,11 +6,13 @@ func main(){
     
     for count = 2; target < 10002; count++ {
 
-        if (isPrime(count)) == true { target++ }       
-        if target == 10001 && ((isPrime(count)) == true) {
-            fmt.Print(count)
-            break
-        } 
+        if (isPrime(count)) == true {
+            target++      
+            if target == 10001 {
+                fmt.Print(count)
+                break
+            }    
+        }
     }
 }
 func isPrime(n int64) bool {
